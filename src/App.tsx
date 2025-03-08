@@ -6,19 +6,19 @@
  * Unauthorized copying of this file, via any medium, is strictly prohibited.
  * Licensed under the MIT License.
  */
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import EmergencyButton from './components/EmergencyButton';
-import HomePage from './pages/HomePage';
-import ReportPage from './pages/ReportPage';
-import LocationPage from './pages/LocationPage';
-import DashboardPage from './pages/DashboardPage';
-import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import EmergencyButton from "./components/EmergencyButton";
+import HomePage from "./pages/HomePage";
+import ReportPage from "./pages/ReportPage";
+import LocationPage from "./pages/LocationPage";
+import DashboardPage from "./pages/DashboardPage";
+import LoginForm from "./components/LoginForm";
+import SignupForm from "./components/SignupForm";
 import ContactManagerPage from "./pages/ContactManger.tsx";
 
 import PanicMode from "./components/PanicMode.tsx";
@@ -38,7 +38,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/report" element={<ReportPage />} />
               <Route path="/location" element={<LocationPage />} />
-              {/*<Route path="/period-details" element={<PeriodDetails/>} />*/}
+              <Route path="/period-details" element={<PeriodDetails />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/contacts" element={<ContactManagerPage />} />
               <Route path="/login" element={<LoginForm />} />
@@ -47,7 +47,7 @@ function App() {
           </main>
           <EmergencyButton />
           <PanicMode />
-          <ChatBot/>
+          <ChatBot />
           <Footer />
         </div>
       </Router>
