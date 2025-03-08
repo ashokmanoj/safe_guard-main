@@ -1,0 +1,13 @@
+services:
+  - name: safeguard-backend
+    type: web
+    env: node
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://manojc6363530865:women@123@cluster0.sgmwr.mongodb.net/
+      - key: JWT_SECRET
+        value: PHEpYGmuxMkx9T3BlbkFJHdQE9TfAV3gBxgYDh7dYl4nB_4Jaf1_KRewDCbY0NY2tElS5uS_IupV8kbpYuaTsrKqVqmTSwA
+      
