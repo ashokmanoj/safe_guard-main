@@ -10,4 +10,7 @@ services:
         value: mongodb+srv://manojc6363530865:women@123@cluster0.sgmwr.mongodb.net/
       - key: JWT_SECRET
         value: PHEpYGmuxMkx9T3BlbkFJHdQE9TfAV3gBxgYDh7dYl4nB_4Jaf1_KRewDCbY0NY2tElS5uS_IupV8kbpYuaTsrKqVqmTSwA
-      
+      - key: TWILIO_ACCOUNT_SID
+        value: AC1b6d3d6d7d6d7d6d7d6d7d6d7d6d7d6d
+      - key: TWILIO_AUTH_TOKEN  
+        value: 2d6d7d6d7d6d7d6d7d6d7d6d7d6d7d7d6d 

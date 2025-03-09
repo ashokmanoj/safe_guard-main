@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-const API_BASE_URL = 'https://safe-guard-main.onrender.com/api/user/';
+const API_BASE_URL = 'https://safeguard-5cfr.onrender.com/api/user/';
 
 export const userApi = {
     login: async (email: string, password: string): Promise<User> => {

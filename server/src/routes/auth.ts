@@ -1,23 +1,25 @@
-import express, { Request, Response } from "express";
+import { Router, Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import User from "../models/User";
 
 dotenv.config();
-const router = express.Router();
+
+const router: Router = Router();
 
 router.post("/register", async (req: any, res: any) => {
   try {
     const { name, email, password } = req.body;
 
-    let user = await User.findOne({ email });
-    if (user) return res.status(400).json({ message: "User already exists" });
+    const existingUser = await User.findOne({ email });
+    if (existingUser)
+      return res.status(400).json({ message: "User already exists" });
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    user = new User({ name, email, password: hashedPassword });
+    const newUser = new User({ name, email, password: hashedPassword });
 
-    await user.save();
+    await newUser.save();
     return res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
     console.error("Error in registration:", error);
@@ -33,9 +35,14 @@ router.post("/login", async (req: any, res: any) => {
     if (!user) return res.status(401).json({ message: "Invalid credentials" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
+    if (!isMatch)
+      return res.status(401).json({ message: "Invalid credentials" });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET as string, { expiresIn: "1h" });
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET as string,
+      { expiresIn: "1h" }
+    );
 
     return res.json({ id: user._id, name: user.name, email: user.email, token });
   } catch (error) {
