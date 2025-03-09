@@ -2,7 +2,7 @@ import axios from "axios";
 import AppClient from "../util/AppClient.ts";
 
 
-const API_BASE_URL = 'https://safeguard-5cfr.onrender.com/emergency/';
+const API_BASE_URL = 'https://safe-guard-main.onrender.com/emergency/';
 
 /*export const emergencyApi = {
     sendEmergencyAlert: async (data: {

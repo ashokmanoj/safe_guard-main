@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import {Cycle} from "../store/slices/cycleSlice.ts";
 
-const API_BASE_URL = "https://safeguard-5cfr.onrender.com/cycle/";
+const API_BASE_URL = "https://safe-guard-main.onrender.com/api/cycle/";
 
 export const cycleApi = {
     fetchCycles: async (): Promise<Cycle[]> => {
