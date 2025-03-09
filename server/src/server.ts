@@ -13,7 +13,7 @@ app.use(express.json()); // Body Parser
 app.use(cors()); // Enable CORS
 
 // Routes
-app.use("/api/auth", authRoutes);
+app.use("/api/user", authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI as string)
