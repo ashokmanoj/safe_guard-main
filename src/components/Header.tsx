@@ -50,8 +50,8 @@ export default function Header() {
                           className="text-gray-600 hover:text-purple-600 transition-colors">Dashboard</Link>
                     <Link to="/location"
                           className="text-gray-600 hover:text-purple-600 transition-colors">Location</Link>
-                    {/*<Link to="/period-details" className="text-gray-600 hover:text-purple-600 transition-colors">Period*/}
-                    {/*  Details</Link>*/}
+                    <Link to="/period-details" className="text-gray-600 hover:text-purple-600 transition-colors">Period
+                     Details</Link>
                     <Link to="/report" className="text-gray-600 hover:text-purple-600 transition-colors">Report</Link>
                     <Link to="/contacts" className="text-gray-700 hover:text-purple-500">Phone Book</Link>
                   </>

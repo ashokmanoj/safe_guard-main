@@ -64,7 +64,7 @@ export default function IncidentNotifications() {
             setIsUpdating(true);
             await dispatch(updateIncident(editedIncident)).unwrap();
 
-            const updatedIncidents = incidents.map(inc =>
+            const updatedIncidents = incidents.map((inc: { _id: string; }) =>
                 inc._id === editedIncident._id ? editedIncident : inc
             );
             setEditingIncidentId(null);
@@ -105,7 +105,7 @@ export default function IncidentNotifications() {
             </div>
 
             <div className="space-y-4">
-                {incidents.map((incident, index) => {
+                {incidents.map((incident: Incident, index: any) => {
                     if (!incident._id) {
                         console.warn("Missing _id for incident:", incident);
                     }
